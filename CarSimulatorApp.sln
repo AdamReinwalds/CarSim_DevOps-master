@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIServiceLibrary", "APISer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSimulator.Server", "CarSimulator.Server\CarSimulator.Server.csproj", "{02850447-C7EE-48D4-95E2-0C12BBF894E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSimulatorApp.Tests", "CarSimulatorApp.Tests\CarSimulatorApp.Tests.csproj", "{BE6EB1B3-36FC-4101-91A5-C05D28436BE0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSimulator.Server.Tests", "CarSimulator.Server.Tests\CarSimulator.Server.Tests.csproj", "{06DC69F7-DDBB-4AF5-9D9E-979527A36DF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{02850447-C7EE-48D4-95E2-0C12BBF894E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02850447-C7EE-48D4-95E2-0C12BBF894E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02850447-C7EE-48D4-95E2-0C12BBF894E7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BE6EB1B3-36FC-4101-91A5-C05D28436BE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BE6EB1B3-36FC-4101-91A5-C05D28436BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BE6EB1B3-36FC-4101-91A5-C05D28436BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BE6EB1B3-36FC-4101-91A5-C05D28436BE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06DC69F7-DDBB-4AF5-9D9E-979527A36DF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06DC69F7-DDBB-4AF5-9D9E-979527A36DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06DC69F7-DDBB-4AF5-9D9E-979527A36DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06DC69F7-DDBB-4AF5-9D9E-979527A36DF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

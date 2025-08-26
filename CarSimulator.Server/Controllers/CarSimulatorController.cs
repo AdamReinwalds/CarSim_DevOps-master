@@ -47,7 +47,7 @@ namespace CarSimulator.Server.Controllers
 
             if (viewModel.IsRunning)
             {
-                if (viewModel.Car != null)
+                if (viewModel.Car != null) 
                 {
                     viewModel.CurrentStatus = _simulationLogicService.DecreaseStatusValues(viewModel.SelectedAction, viewModel.CurrentStatus);
                     viewModel.CurrentStatus = _simulationLogicService.PerformAction(viewModel.SelectedAction, viewModel.CurrentStatus);

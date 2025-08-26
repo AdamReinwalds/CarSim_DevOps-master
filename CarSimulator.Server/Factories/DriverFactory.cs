@@ -18,7 +18,8 @@ namespace CarSimulator.Server.Factories
                 First = resultDTO.Results[0].Name.First,
                 Last = resultDTO.Results[0].Name.Last,
                 City = resultDTO.Results[0].Location.City,
-                Country = resultDTO.Results[0].Location.Country
+                Country = resultDTO.Results[0].Location.Country,
+                
             };
         }
 
