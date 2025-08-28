@@ -81,39 +81,51 @@ public class SimulationLogicService_Tests
     }
 
     [Theory]
-    [InlineData(1)]
-    [InlineData(2)]
-    [InlineData(3)]
-    [InlineData(4)]
-    [InlineData(5)]
-    [InlineData(6)]
-    
-    public void DecreaseStatusValues_ShouldProperlyDecreaseValues(int input)
+    [InlineData(1, 0, 0)]
+    [InlineData(1, 10, 10)]
+    [InlineData(2, 10, 10)]
+    [InlineData(3, 20, 20)]
+    [InlineData(4, 10, 10)]
+    [InlineData(4, -12, -12)]
+    [InlineData(5, 10, 10)]
+    [InlineData(5, -2, -2)]
+    [InlineData(6, 10, 10)]
+    [InlineData(6, -5, -5)]
+
+
+    public void DecreaseStatusValues_ShouldProperlyDecreaseValues(int input, int energyValue, int gasValue)
     {
         //Arrange
-        var mockStatus = new StatusDTO { EnergyValue = 10, GasValue = 10 };
+        var mockStatus = new StatusDTO { EnergyValue = energyValue, GasValue = gasValue};
         var mockStrategy = new Mock<IDirectionStrategy>();
         mockStrategy.Setup(s => s.Execute(It.IsAny<StatusDTO>())).Returns<StatusDTO>(status => status);
         SimulationLogicService.DirectionStrategyResolver resolver = action => mockStrategy.Object;
         var service = new SimulationLogicService(new Mock<IDirectionContext>().Object, resolver);
 
+        int maxExpectedGasValue = Math.Max(0, gasValue - 1);
+        int minExpectedGasValue = Math.Max(0, gasValue - 5);
+
+        int maxExpectedEnergyValue = Math.Max(0, energyValue - 1);
+        int minExpectedEnergyValue = Math.Max(0, energyValue - 5);
+        if (gasValue < 0)
+            gasValue = 0;
 
         //Act
         var result = service.DecreaseStatusValues(input, mockStatus);
 
         //Assert
-        Assert.InRange(result.EnergyValue, 5, 9);
+        Assert.InRange(result.EnergyValue, minExpectedEnergyValue, maxExpectedEnergyValue);
         Assert.True(result.EnergyValue >= 0);
         Assert.True(result.GasValue >= 0);
 
         if (input == 5)
         {
-            Assert.Equal(10, result.GasValue);
+            Assert.Equal(gasValue, result.GasValue);
 
         }
         else
         {
-            Assert.InRange(result.GasValue, 5, 9);
+            Assert.InRange(result.GasValue, minExpectedGasValue, maxExpectedGasValue);
         }
     }
 }
