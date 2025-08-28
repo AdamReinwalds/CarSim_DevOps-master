@@ -69,6 +69,9 @@ namespace DataLogicLibrary.Services
         public StatusDTO DecreaseStatusValues(int userInput, StatusDTO currentStatus)
         {
 
+            //If gas doesnt get decreased when resting then it would be logical for energy and gas not to get decreased when refueling or resting
+
+
             Random random = new Random();
             int energyDecrease = random.Next(1, 6);
             int gasDecrease = random.Next(1, 6);

@@ -79,4 +79,41 @@ public class SimulationLogicService_Tests
         Assert.Equal(expectedEnergy, result.EnergyValue);
         Assert.Equal(expectedGas, result.GasValue);
     }
+
+    [Theory]
+    [InlineData(1)]
+    [InlineData(2)]
+    [InlineData(3)]
+    [InlineData(4)]
+    [InlineData(5)]
+    [InlineData(6)]
+    
+    public void DecreaseStatusValues_ShouldProperlyDecreaseValues(int input)
+    {
+        //Arrange
+        var mockStatus = new StatusDTO { EnergyValue = 10, GasValue = 10 };
+        var mockStrategy = new Mock<IDirectionStrategy>();
+        mockStrategy.Setup(s => s.Execute(It.IsAny<StatusDTO>())).Returns<StatusDTO>(status => status);
+        SimulationLogicService.DirectionStrategyResolver resolver = action => mockStrategy.Object;
+        var service = new SimulationLogicService(new Mock<IDirectionContext>().Object, resolver);
+
+
+        //Act
+        var result = service.DecreaseStatusValues(input, mockStatus);
+
+        //Assert
+        Assert.InRange(result.EnergyValue, 5, 9);
+        Assert.True(result.EnergyValue >= 0);
+        Assert.True(result.GasValue >= 0);
+
+        if (input == 5)
+        {
+            Assert.Equal(10, result.GasValue);
+
+        }
+        else
+        {
+            Assert.InRange(result.GasValue, 5, 9);
+        }
+    }
 }
