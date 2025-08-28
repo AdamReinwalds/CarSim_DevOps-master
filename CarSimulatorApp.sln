@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSimulator.Server", "CarS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSimulator.Server.Tests", "CarSimulator.Server.Tests\CarSimulator.Server.Tests.csproj", "{06DC69F7-DDBB-4AF5-9D9E-979527A36DF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLogicLibrary.Tests", "DataLogicLibrary.Tests\DataLogicLibrary.Tests.csproj", "{72343CD6-2D4A-40DC-8676-46986C60A97B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{06DC69F7-DDBB-4AF5-9D9E-979527A36DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06DC69F7-DDBB-4AF5-9D9E-979527A36DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06DC69F7-DDBB-4AF5-9D9E-979527A36DF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72343CD6-2D4A-40DC-8676-46986C60A97B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72343CD6-2D4A-40DC-8676-46986C60A97B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72343CD6-2D4A-40DC-8676-46986C60A97B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72343CD6-2D4A-40DC-8676-46986C60A97B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
